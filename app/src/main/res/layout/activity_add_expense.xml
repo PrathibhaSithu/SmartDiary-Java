@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fragmentbg"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".AddExpenseActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_expences"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
+        android:textSize="40sp"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:textColor="@color/L5"/>
+
+    <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="25dp"
+        >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:background="@drawable/login_border">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/expense"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:id="@+id/amount"
+            android:inputType="numberDecimal"
+            android:background="@drawable/inputfields"
+            android:layout_marginTop="5dp"
+            android:paddingStart="10dp"
+            android:hint="@string/expences"
+            android:textColor="@color/black"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/note"
+            android:textSize="20sp"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/black"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:id="@+id/note"
+            android:background="@drawable/inputfields"
+            android:layout_marginTop="5dp"
+            android:paddingStart="10dp"
+            android:hint="@string/noteb"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/category"
+            android:textSize="20sp"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/black"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:id="@+id/cat"
+            android:background="@drawable/inputfields"
+            android:layout_marginTop="5dp"
+            android:paddingStart="10dp"
+            android:hint="@string/categoryb"
+            android:textColor="@color/black"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/incomeR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/income"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <RadioButton
+                android:id="@+id/expenseR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/expences"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                tools:ignore="TouchTargetSizeCheck" />
+        </RadioGroup>
+    </LinearLayout>
+</ScrollView>
+    <Button
+        android:layout_width="190dp"
+        android:layout_height="60dp"
+        android:id="@+id/savebtn"
+        android:layout_gravity="center"
+        android:background="@drawable/bottombutton"
+        android:backgroundTint="@color/L2"
+        android:text="@string/save"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        />
+
+</LinearLayout>

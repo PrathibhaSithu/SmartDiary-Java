@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:background="@drawable/fragmentbg"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_margin="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:layout_gravity="center"
+                android:text="@string/my_balance_graph"/>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/others"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="330dp"
+        android:layout_marginTop="600dp"
+        android:background="@drawable/roundbtn"
+        android:contentDescription="@string/more"
+        android:drawableStart="@drawable/moreof"
+        android:paddingStart="13dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:layout_width="190dp"
+            android:layout_height="55dp"
+            android:id="@+id/incomebtn"
+            android:layout_marginTop="64dp"
+            android:background="@drawable/bottombutton"
+            android:backgroundTint="@color/L2"
+            android:shadowColor="@color/black"
+            android:text="@string/income"
+            android:textSize="25sp"
+            android:layout_marginEnd="10dp"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+        <Button
+            android:layout_width="190dp"
+            android:layout_height="55dp"
+            android:id="@+id/expensebtn"
+            android:layout_marginTop="64dp"
+            android:background="@drawable/bottombutton"
+            android:backgroundTint="@color/Lavender"
+            android:shadowColor="@color/black"
+            android:text="@string/expense"
+            android:textSize="25sp"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

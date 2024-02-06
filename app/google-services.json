@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "897312238401",
+    "project_id": "smartdiarydb2",
+    "storage_bucket": "smartdiarydb2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:897312238401:android:6d707aea80f60ca1194fc0",
+        "android_client_info": {
+          "package_name": "com.example.smartdiary"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMQ7l69crKWiPLPJncMPoGOOadGKKwYPA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

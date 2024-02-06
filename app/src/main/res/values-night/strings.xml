@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="my_balance_graph">My Balance Graph</string>
+    <string name="income">Income</string>
+    <string name="expense">Expense</string>
+
+    <string name="welcome">Welcome..!</string>
+    <string name="amount">0000</string>
+    <string name="balance">Balance</string>
+
+    <string name="home">home</string>
+    <string name="incomeb">income</string>
+    <string name="expences">expences</string>
+    <string name="map">map</string>
+    <string name="messages">messages</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="expense_manager">Expense Manager</string>
+    <string name="drawlayout">Drawer Layout</string>
+
+    <string name="profile">Profile</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="add_expences">Add Expences</string>
+    <string name="note">Note</string>
+    <string name="noteb">note</string>
+    <string name="category">Category</string>
+    <string name="categoryb">category</string>
+    <string name="add_income">Add Income</string>
+    <string name="more">More</string>
+    <string name="save">Save</string>
+</resources>
