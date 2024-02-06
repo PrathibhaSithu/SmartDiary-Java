@@ -31,8 +31,11 @@ public class AddExpenseActivity extends AppCompatActivity {
         type = getIntent().getStringExtra("type");
         expenseModel = (ExpenseModel) getIntent().getSerializableExtra("model");
 
-        if(expenseModel!=null){
+        if(type==null){
             type = expenseModel.getType();
+            binding.amount.setText(String.valueOf(expenseModel.getAmount()));
+            binding.note.setText(expenseModel.getNote());
+            binding.cat.setText(expenseModel.getCategory());
         }
 
         if(type.equals("Income")){
@@ -55,14 +58,45 @@ public class AddExpenseActivity extends AppCompatActivity {
                 type = "Expense";
             }
         });
+//        binding.savebtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                createExpense();
+//            }
+//        });
         binding.savebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                createExpense();
+                if (expenseModel == null) {
+                    createExpense();
+                } else {
+                    updateExpense();
+                }
             }
         });
+
     }
 
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        MenuInflater inflater = getMenuInflater();
+//        inflater.inflate(R.menu.add_menu, menu);
+//        return true;
+//    }
+//    @Override
+//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+//        int id = item.getItemId();
+//        if(id == R.id.save){
+//            if(expenseModel==null){
+//                createExpense();
+//            }
+//            else {
+//                updateExpense();
+//            }
+//            return true;
+//        }
+//        return false;
+//    }
     private void createExpense() {
         String expenseId = UUID.randomUUID().toString();
         String amount = binding.amount.getText().toString();
@@ -91,6 +125,38 @@ public class AddExpenseActivity extends AppCompatActivity {
                 .collection("expenses")
                 .document(expenseId)
                 .set(expenseModel);
+        finish();
+    }
+
+    private void updateExpense() {
+
+        String expenseId = expenseModel.getExpenseId();
+        String amount = binding.amount.getText().toString();
+        String note = binding.note.getText().toString();
+        String category = binding.cat.getText().toString();
+        String type;
+
+        boolean incomeRChecked = binding.incomeR.isChecked();
+
+        if(incomeRChecked){
+            type = "Income";
+        }
+        else {
+            type = "Expense";
+        }
+
+        if(amount.trim().length()==0){
+            Toast.makeText(this, "Please enter amount", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        ExpenseModel model = new ExpenseModel(expenseId, note, category, type, Long.parseLong(amount), expenseModel.getTime(),
+                FirebaseAuth.getInstance().getUid());
+
+        FirebaseFirestore
+                .getInstance()
+                .collection("expenses")
+                .document(expenseId)
+                .set(model);
         finish();
     }
 }
