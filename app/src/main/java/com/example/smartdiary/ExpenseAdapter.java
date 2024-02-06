@@ -16,11 +16,13 @@ import java.util.List;
 public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.MyViewHolder>{
 
     private Context context;
+    private OnItemClick onItemClick;
     private List<ExpenseModel> expenseModelList;
 
-    public ExpenseAdapter(Context context) {
+    public ExpenseAdapter(Context context, OnItemClick onItemClick) {
         this.context = context;
         expenseModelList = new ArrayList<>();
+        this.onItemClick=onItemClick;
     }
     public void add(ExpenseModel expenseModel){
         expenseModelList.add(expenseModel);
@@ -44,6 +46,13 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.MyViewHo
         holder.noteR.setText(expenseModel.getNote());
         holder.catR.setText(expenseModel.getCategory());
         holder.amountR.setText(String.valueOf(expenseModel.getAmount()));
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onItemClick.onClick(expenseModel);
+            }
+        });
     }
 
     @Override

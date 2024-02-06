@@ -1,6 +1,8 @@
 package com.example.smartdiary;
 
-public class ExpenseModel {
+import java.io.Serializable;
+
+public class ExpenseModel implements Serializable {
     private String expenseId;
     private String note;
     private String category;

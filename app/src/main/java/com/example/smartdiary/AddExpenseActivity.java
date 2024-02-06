@@ -20,6 +20,7 @@ import java.util.UUID;
 public class AddExpenseActivity extends AppCompatActivity {
     ActivityAddExpenseBinding binding;
     private String type;
+    private ExpenseModel expenseModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,12 @@ public class AddExpenseActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         type = getIntent().getStringExtra("type");
+        expenseModel = (ExpenseModel) getIntent().getSerializableExtra("model");
+
+        if(expenseModel!=null){
+            type = expenseModel.getType();
+        }
+
         if(type.equals("Income")){
             binding.incomeR.setChecked(true);
         }
