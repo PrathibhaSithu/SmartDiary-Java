@@ -12,8 +12,6 @@ public class ExpenseModel {
     public ExpenseModel() {
     }
 
-
-
     public ExpenseModel(String expenseId, String note, String category, String type, long amount, long time, String uid) {
         this.expenseId = expenseId;
         this.note = note;

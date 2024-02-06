@@ -29,4 +29,8 @@
     <string name="add_income">Add Income</string>
     <string name="more">More</string>
     <string name="save">Save</string>
+    <string name="date">Date</string>
+    <string name="dateb">date</string>
+    <string name="amountn">Amount</string>
+    <string name="lkr">LKR</string>
 </resources>

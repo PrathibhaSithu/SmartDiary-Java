@@ -2,6 +2,7 @@ package com.example.smartdiary;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -22,12 +23,17 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
+    private ExpenseAdapter expenseAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        expenseAdapter = new ExpenseAdapter(this);
+        binding.recycler.setAdapter(expenseAdapter);
+        binding.recycler.setLayoutManager(new LinearLayoutManager(this));
 
         Intent intent = new Intent(MainActivity.this, AddExpenseActivity.class);
 
@@ -84,9 +90,11 @@ public class MainActivity extends AppCompatActivity {
                 .get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                        expenseAdapter.clear();
                         List<DocumentSnapshot> dsList = queryDocumentSnapshots.getDocuments();
                         for (DocumentSnapshot ds : dsList){
                             ExpenseModel expenseModel = ds.toObject(ExpenseModel.class);
+                            expenseAdapter.add(expenseModel);
                         }
                     }
                 });
