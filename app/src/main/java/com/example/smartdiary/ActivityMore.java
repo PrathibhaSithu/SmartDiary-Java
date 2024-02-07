@@ -12,3 +12,4 @@ public class ActivityMore extends AppCompatActivity {
         setContentView(R.layout.activity_more);
     }
 }
+
