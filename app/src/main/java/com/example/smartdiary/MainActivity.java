@@ -100,7 +100,6 @@ public class MainActivity extends AppCompatActivity implements OnItemClick{
         expense = 0;
         getData();
     }
-
     private void getData() {
         FirebaseFirestore.getInstance().collection("expenses")
                 .whereEqualTo("uid", FirebaseAuth.getInstance().getUid())
@@ -123,7 +122,6 @@ public class MainActivity extends AppCompatActivity implements OnItemClick{
                     }
         });
     }
-
     private void setUpGraph() {
         List<PieEntry> pieEntryList = new ArrayList<>();
         List<Integer> colorsList = new ArrayList<>();
@@ -135,14 +133,13 @@ public class MainActivity extends AppCompatActivity implements OnItemClick{
             pieEntryList.add(new PieEntry(expense, "Expense"));
             colorsList.add(getResources().getColor(R.color.Lavender));
         }
-        PieDataSet pieDataSet = new PieDataSet(pieEntryList,String.valueOf(income-expense));
+        PieDataSet pieDataSet = new PieDataSet(pieEntryList,"  Balance: " +(income-expense));
         pieDataSet.setColors(colorsList);
         PieData pieData = new PieData(pieDataSet);
 
         binding.balancechart.setData(pieData);
         binding.balancechart.invalidate();
     }
-
     @Override
     public void onClick(ExpenseModel expenseModel) {
         intent.putExtra("model",expenseModel);
