@@ -13,7 +13,7 @@
         android:theme="@style/Theme.SmartDiary"
         tools:targetApi="31">
         <activity
-            android:name=".AddIncomeText"
+            android:name=".ActivityMore"
             android:exported="false" />
         <activity
             android:name=".AddExpenseActivity"

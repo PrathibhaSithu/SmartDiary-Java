@@ -58,16 +58,10 @@ public class AddExpenseActivity extends AppCompatActivity {
                 type = "Expense";
             }
         });
-//        binding.savebtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                createExpense();
-//            }
-//        });
         binding.savebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (expenseModel == null) {
+                if (expenseModel== null) {
                     createExpense();
                 } else {
                     updateExpense();
