@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homebottom"
+        android:title="@string/home"
+        android:icon="@drawable/homeicon"/>
+    <item
+        android:id="@+id/incomebottom"
+        android:title="@string/incomeb"
+        android:icon="@drawable/addincomeicon"/>
+    <item
+        android:id="@+id/expencebottom"
+        android:title="@string/expences"
+        android:icon="@drawable/addexpencesicon"/>
+    <item
+        android:id="@+id/mapbottom"
+        android:title="@string/map"
+        android:icon="@drawable/mapicon"/>
+    <item
+        android:id="@+id/messagebottom"
+        android:title="@string/messages"
+        android:icon="@drawable/messageicon"/>
+</menu>
