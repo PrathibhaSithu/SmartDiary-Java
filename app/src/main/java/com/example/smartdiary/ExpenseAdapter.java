@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -46,6 +47,12 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.MyViewHo
         holder.noteR.setText(expenseModel.getNote());
         holder.catR.setText(expenseModel.getCategory());
         holder.amountR.setText(String.valueOf(expenseModel.getAmount()));
+
+        if (expenseModel.getType().equals("Income")) {
+            holder.itemView.setBackgroundColor(ContextCompat.getColor(context, R.color.green));
+        } else {
+            holder.itemView.setBackgroundColor(ContextCompat.getColor(context, R.color.pink));
+        }
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
