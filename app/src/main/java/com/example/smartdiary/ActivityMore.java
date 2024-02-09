@@ -20,7 +20,7 @@ public class ActivityMore extends AppCompatActivity {
         locationCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ActivityMore.this, ProfileActivity.class);
+                Intent intent = new Intent(ActivityMore.this, NearPlaceViewActivity.class);
                 startActivity(intent);
             }
         });

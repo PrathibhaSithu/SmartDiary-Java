@@ -29,4 +29,5 @@
     <string name="amountn">Amount</string>
     <string name="lkr">LKR</string>
     <string name="let_s_explore_more">Explore More</string>
+    <string name="title_activity_near_place_view">NearPlaceViewActivity</string>
 </resources>
