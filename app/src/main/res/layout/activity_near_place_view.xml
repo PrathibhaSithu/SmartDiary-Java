@@ -1,9 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:map="http://schemas.android.com/apk/res-auto"
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/map"
-    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context=".NearPlaceViewActivity"
+    android:background="@drawable/mapbg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linierLayout"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_alignParentBottom="false"
+        >
+
+        <ImageButton
+            android:layout_marginStart="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/hospital"
+            android:padding="30dp"
+            android:src="@drawable/hospitlmap"
+            android:background="@drawable/inputcard"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/atm"
+            android:padding="30dp"
+            android:layout_marginStart="5dp"
+            android:src="@drawable/atmmap"
+            android:background="@drawable/inputcard"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rest"
+            android:padding="30dp"
+            android:src="@drawable/restaurantmap"
+            android:background="@drawable/inputcard"
+            android:layout_marginStart="5dp"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bank"
+            android:padding="30dp"
+            android:src="@drawable/bankmap"
+            android:background="@drawable/inputcard"
+            android:layout_marginStart="5dp"/>
+
+    </LinearLayout>
+
+<fragment
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NearPlaceViewActivity" />
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/map"
+    android:layout_below="@+id/linierLayout"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    />
+
+</RelativeLayout>
