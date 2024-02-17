@@ -34,14 +34,14 @@ public class ActivityMore extends AppCompatActivity {
             }
         });
 
-        messageCard = findViewById(R.id.messagecard);
-        messageCard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ActivityMore.this, TrackMessageActivity.class);
-                startActivity(intent);
-            }
-        });
+//        messageCard = findViewById(R.id.messagecard);
+//        messageCard.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(ActivityMore.this, TrackMessageActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         profileCard = findViewById(R.id.profilecard);
         profileCard.setOnClickListener(new View.OnClickListener() {
