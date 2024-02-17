@@ -9,7 +9,7 @@ import android.view.View;
 
 public class ActivityMore extends AppCompatActivity {
 
-    CardView locationCard, homeCard, messageCard, profileCard, expenseCard, settingCard;
+    CardView locationCard, homeCard, profileCard, expenseCard, settingCard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
